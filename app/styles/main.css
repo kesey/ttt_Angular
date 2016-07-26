@@ -48,6 +48,7 @@ body {
 
 #js-navbar-collapse {
   background-color: #f8f8f8;
+  /*border: 1px solid #e5e5e5;*/
 }
 
 .container > .view {
@@ -105,3 +106,14 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Animations */
+.animate.ng-enter {
+   -webkit-animation: flipInX 1s;
+   -moz-animation: flipInX 1s;
+   -ms-animation: flipInX 1s;
+   animation: flipInX 1s;
+   z-index: -1;
+}
+
+
