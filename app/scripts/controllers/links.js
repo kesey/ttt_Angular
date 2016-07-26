@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tttApp.controller:MainCtrl
+ * @name tttApp.controller:LinksCtrl
  * @description
- * # MainCtrl
+ * # LinksCtrl
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('MainCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
+  .controller('LinksCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

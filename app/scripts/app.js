@@ -21,29 +21,29 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/releases.html',
+        controller: 'ReleasesCtrl',
+        controllerAs: 'releases'
       })
-      .when('/references', {
-        templateUrl: 'views/references.html',
-        controller: 'ReferencesCtrl',
-        controllerAs: 'references'
+      .when('/label', {
+        templateUrl: 'views/label.html',
+        controller: 'LabelCtrl',
+        controllerAs: 'label'
       })
-      .when('/expertise', {
-        templateUrl: 'views/expertise.html',
-        controller: 'ExpertiseCtrl',
-        controllerAs: 'expertise'
+      .when('/artists', {
+        templateUrl: 'views/artists.html',
+        controller: 'ArtistsCtrl',
+        controllerAs: 'artists'
       })
-      .when('/agence', {
-        templateUrl: 'views/agence.html',
-        controller: 'AgenceCtrl',
-        controllerAs: 'agence'
+      .when('/events', {
+        templateUrl: 'views/events.html',
+        controller: 'EventsCtrl',
+        controllerAs: 'events'
       })
-      .when('/news', {
-        templateUrl: 'views/news.html',
-        controller: 'NewsCtrl',
-        controllerAs: 'news'
+      .when('/links', {
+        templateUrl: 'views/links.html',
+        controller: 'LinksCtrl',
+        controllerAs: 'links'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',

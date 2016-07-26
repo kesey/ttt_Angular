@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tttApp.controller:NewsCtrl
+ * @name tttApp.controller:EventsCtrl
  * @description
- * # NewsCtrl
+ * # EventsCtrl
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('NewsCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
+  .controller('EventsCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

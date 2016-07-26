@@ -1,7 +1,8 @@
+'use strict';
+
 /**
  * Created by Fabien on 26/07/2016.
  */
-'use strict';
 
 var express = require('express'),
     cors = require('cors'),

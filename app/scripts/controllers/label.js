@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tttApp.controller:AgenceCtrl
+ * @name tttApp.controller:LabelCtrl
  * @description
- * # AgenceCtrl
+ * # LabelCtrl
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('AgenceCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
+  .controller('LabelCtrl', ["$rootScope", "$location", "config", function ($rootScope, $location, config) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,4 +16,5 @@ angular.module('tttApp')
     ];
 
     $rootScope.url = $location.path();
+    this.api = config.api;
   }]);

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tttApp.controller:ReferencesCtrl
+ * @name tttApp.controller:ReleasesCtrl
  * @description
- * # ReferencesCtrl
+ * # ReleasesCtrl
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('ReferencesCtrl', ["$rootScope", "$location", "config", function ($rootScope, $location, config) {
+  .controller('ReleasesCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,5 +16,4 @@ angular.module('tttApp')
     ];
 
     $rootScope.url = $location.path();
-    this.api = config.api;
   }]);

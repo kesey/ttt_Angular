@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tttApp.controller:ExpertiseCtrl
+ * @name tttApp.controller:ArtistsCtrl
  * @description
- * # ExpertiseCtrl
+ * # ArtistsCtrl
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('ExpertiseCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
+  .controller('ArtistsCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
