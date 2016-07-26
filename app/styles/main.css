@@ -32,6 +32,24 @@ body {
   padding-bottom: 19px;
 }
 
+.header div.btn-group {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+
+.header .container {
+  display: inline-block;
+}
+.header .navbar {
+  text-align: center;
+  height: 50px;
+}
+
+#js-navbar-collapse {
+  background-color: #f8f8f8;
+}
+
 .container > .view {
   margin-top: 80px;
 }

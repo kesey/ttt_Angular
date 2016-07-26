@@ -83,7 +83,8 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.app %>/translate/*.json'
         ]
       }
     },
@@ -410,6 +411,11 @@ module.exports = function (grunt) {
           ]
         }, {
           expand: true,
+          cwd: 'app/translate',
+          src: '**',
+          dest: '<%= yeoman.dist %>/translate'
+        }, {
+          expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
@@ -473,16 +479,6 @@ module.exports = function (grunt) {
         ];
 
     grunt.task.run(tasks);
-
-    // grunt.task.run([
-    //   'clean:server',
-    //   'replace:' + target,
-    //   'wiredep',
-    //   'concurrent:server',
-    //   'postcss:server',
-    //   'connect:livereload',
-    //   'watch'
-    // ]);
   });
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {

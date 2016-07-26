@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('tttApp', [
     'ngAnimate',
@@ -16,9 +17,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'pascalprecht.translate'
   ])
-  .config(function ($routeProvider) {
+  .config(["$routeProvider", "$translateProvider" ,function ($routeProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/releases.html',
@@ -53,4 +55,14 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  })
+
+      $translateProvider
+          .useSanitizeValueStrategy('sanitize')
+          .useStaticFilesLoader({
+              prefix: 'translate/',
+              suffix: '.json'
+          })
+          .preferredLanguage('en')
+          // remember language
+          .useLocalStorage();
+  }]);
