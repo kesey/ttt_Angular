@@ -41,9 +41,24 @@ body {
 .header .container {
   display: inline-block;
 }
+
+.header .title {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header .title a {
+  text-decoration: none;
+}
+
 .header .navbar {
   text-align: center;
   height: 50px;
+  opacity: 0.8;
+}
+
+.header .navbar:hover {
+  opacity: 1;
 }
 
 #js-navbar-collapse {

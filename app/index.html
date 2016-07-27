@@ -25,69 +25,13 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header" ng-controller="MainCtrl as main">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li ng-class="{'active': url === '/label'}"><a ng-href="#/label" translate>MENU_LABEL</a></li>
-              <li ng-class="{'active': url === '/'}"><a href="#/" translate>MENU_RELEASES</a></li>
-              <li ng-class="{'active': url === '/artists'}"><a ng-href="#/artists" translate>MENU_ARTISTS</a></li>
-              <li ng-class="{'active': url === '/events'}"><a ng-href="#/events" translate>MENU_EVENTS</a></li>
-              <li ng-class="{'active': url === '/links'}"><a ng-href="#/links" translate>MENU_LINKS</a></li>
-              <li ng-class="{'active': url === '/contact'}"><a ng-href="#/contact" translate>MENU_CONTACT</a></li>
-            </ul>
-
-          </div>
-        </div>
-
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span translate>LANGUAGE</span>
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="" ng-click="main.changeLanguage('fr')">
-                <img src="images/fr.png" alt="flag_fr">
-                <span translate>BUTTON_LANG_FR</span>
-              </a>
-            </li>
-            <li>
-              <a href="" ng-click="main.changeLanguage('en')">
-                <img src="images/en.png" alt="flag_en">
-                <span translate>BUTTON_LANG_EN</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
+    <div ng-include="'views/header.html'"></div>
 
     <div class="container">
       <div class="view animate" ng-view=""></div>
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-equalizer"></span>&nbsp;Third Type Tapes 2016</p>
-      </div>
-    </div>
-
-
+    <div ng-include="'views/footer.html'"></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -118,16 +62,16 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/services/config.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/releases.js"></script>
-        <script src="scripts/controllers/label.js"></script>
-        <script src="scripts/controllers/artists.js"></script>
-        <script src="scripts/controllers/events.js"></script>
-        <script src="scripts/controllers/links.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/config.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/releases.js"></script>
+    <script src="scripts/controllers/label.js"></script>
+    <script src="scripts/controllers/artists.js"></script>
+    <script src="scripts/controllers/events.js"></script>
+    <script src="scripts/controllers/links.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
