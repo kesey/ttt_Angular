@@ -8,7 +8,7 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('MainCtrl', ["$translate", function ($translate) {
+  .controller('MainCtrl', ['$translate', function ($translate) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,5 +17,5 @@ angular.module('tttApp')
 
     this.changeLanguage = function(langKey) {
         $translate.use(langKey);
-    }
+    };
   }]);

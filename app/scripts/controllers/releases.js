@@ -8,7 +8,7 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('ReleasesCtrl', ["$rootScope", "$location", function ($rootScope, $location) {
+  .controller('ReleasesCtrl', ['$rootScope', '$location', function ($rootScope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

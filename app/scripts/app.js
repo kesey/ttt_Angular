@@ -20,7 +20,7 @@ angular
     'ngTouch',
     'pascalprecht.translate'
   ])
-  .config(["$routeProvider", "$translateProvider" ,function ($routeProvider, $translateProvider) {
+  .config(['$routeProvider', '$translateProvider' ,function ($routeProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/releases.html',

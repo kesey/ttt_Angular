@@ -8,7 +8,7 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('LabelCtrl', ["$rootScope", "$location", "config", function ($rootScope, $location, config) {
+  .controller('LabelCtrl', ['$rootScope', '$location', 'config', function ($rootScope, $location, config) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
