@@ -1,32 +1,5 @@
 <div class="header" ng-controller="MainCtrl as main">
     <div class="navbar navbar-default" role="navigation">
-        <h3 class="title"><a href="#/">TTT</a></h3>
-        <div class="container">
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-            </div>
-
-            <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-                <ul class="nav navbar-nav">
-                    <li ng-class="{'active': url === '/label'}"><a ng-href="#/label" translate>MENU_LABEL</a></li>
-                    <li ng-class="{'active': url === '/'}"><a href="#/" translate>MENU_RELEASES</a></li>
-                    <li ng-class="{'active': url === '/artists'}"><a ng-href="#/artists" translate>MENU_ARTISTS</a></li>
-                    <li ng-class="{'active': url === '/events'}"><a ng-href="#/events" translate>MENU_EVENTS</a></li>
-                    <li ng-class="{'active': url === '/links'}"><a ng-href="#/links" translate>MENU_LINKS</a></li>
-                    <li ng-class="{'active': url === '/contact'}"><a ng-href="#/contact" translate>MENU_CONTACT</a></li>
-                </ul>
-
-            </div>
-        </div>
-
         <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span translate>LANGUAGE</span>
@@ -47,6 +20,49 @@
                 </li>
             </ul>
         </div>
+        <h3 class="title"><a href="#/">TTT</a></h3>
+        <div class="container">
+            <div class="navbar-header">
 
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+                <ul class="nav navbar-nav">
+                    <li ng-class="{'active': url === '/label'}">
+                        <a ng-href="#/label" translate>MENU_LABEL</a>
+                        <div class="underline-menu"></div>
+                    </li>
+                    <li ng-class="{'active': url === '/'}">
+                        <a href="#/" translate>MENU_RELEASES</a>
+                        <div class="underline-menu"></div>
+                    </li>
+                    <li ng-class="{'active': url === '/artists'}">
+                        <a ng-href="#/artists" translate>MENU_ARTISTS</a>
+                        <div class="underline-menu"></div>
+                    </li>
+                    <li ng-class="{'active': url === '/events'}">
+                        <a ng-href="#/events" translate>MENU_EVENTS</a>
+                        <div class="underline-menu"></div>
+                    </li>
+                    <li ng-class="{'active': url === '/links'}">
+                        <a ng-href="#/links" translate>MENU_LINKS</a>
+                        <div class="underline-menu"></div>
+                    </li>
+                    <li ng-class="{'active': url === '/contact'}">
+                        <a ng-href="#/contact" translate>MENU_CONTACT</a>
+                        <div class="underline-menu"></div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
     </div>
 </div>
