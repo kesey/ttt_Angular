@@ -1,3 +1,5 @@
+/*------------------------------------------------------------------------------general-----------------------------------------------------------------------------------*/
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -24,30 +26,19 @@ body {
   width: 100%;
   position : fixed;
 }
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+
+.header .title {
+  margin: 11px 0 0 20px;
+  float: left;
 }
 
 .header div.btn-group {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 7px;
-}
-
-.header .container {
-  display: inline-block;
-}
-
-.header .title {
-  display: inline-block;
-  vertical-align: top;
+  margin: 7px 8% 0 0;
+  float: right;
 }
 
 .header .title a {
+  color: #777;
   text-decoration: none;
 }
 
@@ -55,19 +46,60 @@ body {
   text-align: center;
   height: 50px;
   opacity: 0.8;
+  filter: alpha(opacity=80); /* pour IE */
 }
+
+/* shifting item menu on hover */
+/*.header .container .nav.navbar-nav a {
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.header .container .nav.navbar-nav li:hover a{
+  -webkit-transform: translate(3px, 0px);
+  -moz-transform: translate(3px, 0px);
+  -o-transform: translate(3px, 0px);
+  -ms-transform: translate(3px, 0px);
+  transform: translate(3px, 0px);
+}*/
 
 .header .navbar:hover {
   opacity: 1;
 }
 
-#js-navbar-collapse {
-  background-color: #f8f8f8;
-  /*border: 1px solid #e5e5e5;*/
+/* underline item menu on hover */
+.header .container .underline-menu {
+  height: 1px;
+  background-color: #777;
+  width: 1%;
+  visibility: hidden;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transform-origin: left bottom;
+  -webkit-transform-origin: left bottom;
+  -o-transform-origin: left bottom;
+  -ms-transform-origin: left bottom;
+  transform-origin: left bottom;
 }
 
-.container > .view {
-  margin-top: 80px;
+.header .container .nav.navbar-nav li:hover .underline-menu {
+  visibility: visible;
+  -moz-transform: scaleX(100);
+  -webkit-transform: scaleX(100);
+  -o-transform: scaleX(100);
+  -ms-transform: scaleX(100);
+  transform: scaleX(100);
+}
+
+#js-navbar-collapse {
+  overflow: hidden;
+  background-color: #f8f8f8;
 }
 
 /* Custom page footer */
@@ -81,20 +113,30 @@ body {
   margin: 30px 0;
 }
 
+.glyphicon {
+  z-index: -1;
+}
+
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
+}
+
+.container > .view {
+  margin-top: 80px;
 }
 
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
 }
+
 .marketing p + h4 {
   margin-top: 28px;
 }
@@ -112,23 +154,31 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
+
 }
 
-/* Animations */
-.animate.ng-enter {
+/* View Animations */
+.anim.ng-enter {
    -webkit-animation: flipInX 1s;
    -moz-animation: flipInX 1s;
+   -o-animation: flipInX 1s;
    -ms-animation: flipInX 1s;
    animation: flipInX 1s;
    z-index: -1;
 }
+
+/**************************************************************************************************************************************************************************/
+/*------------------------------------------------------------------------------FRONT-------------------------------------------------------------------------------------*/
+/**************************************************************************************************************************************************************************/
 
 
