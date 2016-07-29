@@ -7,5 +7,9 @@
   "MENU_ARTISTS": "Artists",
   "MENU_EVENTS": "Events",
   "MENU_LINKS": "Links",
-  "MENU_CONTACT": "Contact"
+  "MENU_CONTACT": "Contact",
+  "LOG_IN": "Log In",
+  "USER": "User",
+  "PASSWORD": "Password",
+  "SUBMIT": "Submit"
 }

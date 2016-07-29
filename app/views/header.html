@@ -1,6 +1,6 @@
 <div class="header" ng-controller="MainCtrl as main">
     <div class="navbar navbar-default" role="navigation">
-        <div class="btn-group">
+        <div class="btn-group traduction">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span translate>LANGUAGE</span>
                 <span class="caret"></span>
@@ -37,31 +37,55 @@
 
                 <ul class="nav navbar-nav">
                     <li ng-class="{'active': url === '/label'}">
-                        <a ng-href="#/label" translate>MENU_LABEL</a>
+                        <a ng-href="#/label" class="menu" translate>MENU_LABEL</a>
                         <div class="underline-menu"></div>
                     </li>
                     <li ng-class="{'active': url === '/'}">
-                        <a href="#/" translate>MENU_RELEASES</a>
+                        <a href="#/" class="menu" translate>MENU_RELEASES</a>
                         <div class="underline-menu"></div>
                     </li>
                     <li ng-class="{'active': url === '/artists'}">
-                        <a ng-href="#/artists" translate>MENU_ARTISTS</a>
+                        <a ng-href="#/artists" class="menu" translate>MENU_ARTISTS</a>
                         <div class="underline-menu"></div>
                     </li>
                     <li ng-class="{'active': url === '/events'}">
-                        <a ng-href="#/events" translate>MENU_EVENTS</a>
+                        <a ng-href="#/events" class="menu" translate>MENU_EVENTS</a>
                         <div class="underline-menu"></div>
                     </li>
                     <li ng-class="{'active': url === '/links'}">
-                        <a ng-href="#/links" translate>MENU_LINKS</a>
+                        <a ng-href="#/links" class="menu" translate>MENU_LINKS</a>
                         <div class="underline-menu"></div>
                     </li>
                     <li ng-class="{'active': url === '/contact'}">
-                        <a ng-href="#/contact" translate>MENU_CONTACT</a>
+                        <a ng-href="#/contact" class="menu" translate>MENU_CONTACT</a>
                         <div class="underline-menu"></div>
                     </li>
+                    <!--<li class="log-container">
+                        <div class="btn-group logIn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span translate>LOG_IN</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <form class="navbar-form" action="" method="post">
+                                    <li>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="{{ 'USER' | translate }}" name="username">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="{{ 'PASSWORD' | translate }}" name="password">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button type="submit" class="btn btn-default" translate>SUBMIT</button>
+                                    </li>
+                                </form>
+                            </ul>
+                        </div>
+                    </li>-->
                 </ul>
-
             </div>
         </div>
     </div>
