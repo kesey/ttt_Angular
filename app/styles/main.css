@@ -12,6 +12,14 @@ body {
   margin: 0;
 }
 
+a {
+  color: #8c8c8c;
+}
+
+a:hover {
+  color: #777;
+  text-decoration: none;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -57,7 +65,6 @@ body {
 
 .header .title a {
   color: #777;
-  text-decoration: none;
   margin-right: 7px;
 }
 
@@ -200,11 +207,11 @@ body {
 }
 
 .header .container li.active {
-  -webkit-animation: zoomIn 1s;
-  -moz-animation: zoomIn 1s;
-  -o-animation: zoomIn 1s;
-  -ms-animation: zoomIn 1s;
-  animation: zoomIn 1s;
+  -webkit-animation: zoomIn 0.6s;
+  -moz-animation: zoomIn 0.6s;
+  -o-animation: zoomIn 0.6s;
+  -ms-animation: zoomIn 0.6s;
+  animation: zoomIn 0.6s;
 }
 
 /**************************************************************************************************************************************************************************/
