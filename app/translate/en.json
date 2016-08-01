@@ -1,5 +1,4 @@
 {
-  "LANGUAGE": "Language",
   "BUTTON_LANG_FR": "French",
   "BUTTON_LANG_EN": "English",
   "MENU_LABEL": "Label",
@@ -8,8 +7,10 @@
   "MENU_EVENTS": "Events",
   "MENU_LINKS": "Links",
   "MENU_CONTACT": "Contact",
-  "LOG_IN": "Log In",
   "USER": "User",
   "PASSWORD": "Password",
-  "SUBMIT": "Submit"
+  "SUBMIT": "Submit",
+  "LABEL_DESCRIPTION": "ThirdTypeTapes is a tape label founded in the summer of 2012. We want to archive as much sounds and music as possible in a widest possible time of the cosmos. Magnetic tape is a high quality analog sound recording medium available since the 1970's by humans who want to spread alternatives and minority discourses. It still appears today as very efficient for these purposes even if it's been largely replaced by digital technologies since the first decade of 21st century.",
+  "CONTACT": "For any inquiries feel free to ask at: thirdtypetapes@gmail.com",
+  "FOLLOW": "Follow us:"
 }

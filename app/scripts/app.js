@@ -62,7 +62,7 @@ angular
               prefix: 'translate/',
               suffix: '.json'
           })
-          .preferredLanguage('en')
+          .preferredLanguage('fr')
           // remember language
           .useLocalStorage();
   }]);

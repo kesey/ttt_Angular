@@ -32,31 +32,43 @@ body {
   float: left;
 }
 
-/* traduction */
-.header div.btn-group {
+/* traduction + log-in */
+.header div.btn-menu {
   margin: 7px 8% 0 0;
   float: right;
+}
+
+.header .btn-group .dropdown-menu {
+  padding: 0;
+  box-shadow: none;
+}
+
+.header .btn-group.logIn .dropdown-menu form {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .btn-group.logIn .dropdown-menu form button {
+  width: 100%;
+  border-radius: 0;
 }
 
 .header .title a {
   color: #777;
   text-decoration: none;
+  margin-right: 7px;
+}
+
+.header .traduction img {
+  vertical-align: text-top;
 }
 
 .header .navbar {
   text-align: center;
   height: 50px;
-  opacity: 0.8;
-  filter: alpha(opacity=80); /* pour IE */
 }
-
-.header .navbar:hover {
-  opacity: 1;
-}
-
-/*.header .log-container {
-  margin-left: 80px;
-}*/
 
 /* shifting item menu on hover */
 .header .container .nav.navbar-nav a.menu {
@@ -102,9 +114,14 @@ body {
   transform: scaleX(100);
 }*/
 
+.navbar-toggle {
+  margin: 7px 2% 7px 2%;
+}
+
 #js-navbar-collapse {
   overflow: hidden;
   background-color: #f8f8f8;
+  padding: 0;
 }
 
 /* Custom page footer */
@@ -118,7 +135,7 @@ body {
   margin: 30px 0;
 }
 
-.glyphicon {
+.glyphicon:not(.glyphicon-log-in) {
   z-index: -1;
 }
 
