@@ -4,10 +4,11 @@
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!</a></p>
+  <p><a class="btn btn-lg btn-success" ng-click="releases.serverConnect()">Splendid!</a></p>
 </div>
 
 <div>
+  <p>{{releases.serverResponse}}</p>
   <h4>HTML5 Boilerplate</h4>
   <p>
     HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.

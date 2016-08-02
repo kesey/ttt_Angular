@@ -22,7 +22,7 @@ angular
   ])
   .config(['$routeProvider', '$translateProvider' ,function ($routeProvider, $translateProvider) {
     $routeProvider
-      .when('/', {
+      .when('/releases', {
         templateUrl: 'views/releases.html',
         controller: 'ReleasesCtrl',
         controllerAs: 'releases'
@@ -53,7 +53,7 @@ angular
         controllerAs: 'contact'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/releases'
       });
 
       $translateProvider
