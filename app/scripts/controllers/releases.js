@@ -22,13 +22,13 @@ angular.module('tttApp')
     this.serverConnect = function() {
         $http({
             method: 'GET',
-            url: config.api + 'c'
+            url: config.api + 'cassette'
         }).then(function(response) {
             console.log('success');
-            this.serverResponse = response.data;
+            this.serverResponse = response;
         }.bind(this), function(response) {
             console.log('fail');
-            this.serverResponse = response.data;
+            this.serverResponse = response;
         }.bind(this));
     };
   }]);

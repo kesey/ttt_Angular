@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name tttApp.controller:MainCtrl
+ * @name tttApp.controller:HeaderCtrl
  * @description
- * # MainCtrl
+ * # HeaderCtrl
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('MainCtrl', ['$translate', function ($translate) {
+  .controller('HeaderCtrl', ['$translate', function ($translate) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
