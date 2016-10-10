@@ -25,32 +25,38 @@ angular
       .when('/releases', {
         templateUrl: 'views/releases.html',
         controller: 'ReleasesCtrl',
-        controllerAs: 'releases'
+        controllerAs: 'releases',
+        title: 'releases'
       })
       .when('/label', {
         templateUrl: 'views/label.html',
         controller: 'LabelCtrl',
-        controllerAs: 'label'
+        controllerAs: 'label',
+        title: 'label'
       })
       .when('/artists', {
         templateUrl: 'views/artists.html',
         controller: 'ArtistsCtrl',
-        controllerAs: 'artists'
+        controllerAs: 'artists',
+        title: 'artists'
       })
       .when('/events', {
         templateUrl: 'views/events.html',
         controller: 'EventsCtrl',
-        controllerAs: 'events'
+        controllerAs: 'events',
+        title: 'events'
       })
       .when('/links', {
         templateUrl: 'views/links.html',
         controller: 'LinksCtrl',
-        controllerAs: 'links'
+        controllerAs: 'links',
+        title: 'links'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
-        controllerAs: 'contact'
+        controllerAs: 'contact',
+        title: 'contact'
       })
       .otherwise({
         redirectTo: '/releases'
@@ -65,4 +71,18 @@ angular
           .preferredLanguage('fr')
           // remember language
           .useLocalStorage();
+  }])
+  .run(['$rootScope', '$route', '$filter', '$translate', function($rootScope, $route, $filter, $translate) {
+    function changeTitle() {
+        var dynamicTitle = $filter('uppercase')($route.current.title);
+        document.title = 'Third Type Tapes - ' + $translate.instant('MENU_' + dynamicTitle);
+    }
+
+    $rootScope.$on('$routeChangeSuccess', function() {
+        changeTitle();
+    });
+
+    $rootScope.$on('$translateChangeSuccess', function () {
+        changeTitle();
+    });
   }]);

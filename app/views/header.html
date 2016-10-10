@@ -1,4 +1,4 @@
-<div class="header" ng-controller="MainCtrl as main">
+<div class="header" ng-controller="HeaderCtrl as head">
     <div class="navbar navbar-default" role="navigation">
         <div class="btn-menu">
             <div class="btn-group logIn">
@@ -14,7 +14,7 @@
                         </li>
                         <li>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="{{ 'PASSWORD' | translate }}" name="password">
+                                <input type="password" class="form-control" placeholder="{{ 'PASSWORD' | translate }}" name="password">
                             </div>
                         </li>
                         <li>
@@ -25,18 +25,18 @@
             </div>
             <div class="btn-group traduction">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{main.flagPath}}" alt="flag">&nbsp;
+                    <img src="{{head.flagPath}}" alt="flag">&nbsp;
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="" ng-click="main.changeLanguage('fr')">
+                        <a href="" ng-click="head.changeLanguage('fr')">
                             <img src="images/fr.png" alt="flag_fr">&nbsp;
                             <span translate>BUTTON_LANG_FR</span>
                         </a>
                     </li>
                     <li>
-                        <a href="" ng-click="main.changeLanguage('en')">
+                        <a href="" ng-click="head.changeLanguage('en')">
                             <img src="images/en.png" alt="flag_en">&nbsp;
                             <span translate>BUTTON_LANG_EN</span>
                         </a>

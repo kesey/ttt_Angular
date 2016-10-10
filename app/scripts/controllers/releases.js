@@ -17,7 +17,7 @@ angular.module('tttApp')
 
     $rootScope.url = $location.path();
 
-    this.serverResponse = 'waiting...';
+    this.serverResponse = '';
 
     this.serverConnect = function() {
         $http({
