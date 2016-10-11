@@ -16,19 +16,17 @@ angular.module('tttApp')
     ];
 
     $rootScope.url = $location.path();
+    this.loading = true;
+    $http({
+        method: 'GET',
+        url: config.api + 'cassette'
+    }).then(function(response) {
+        console.log('success');
+        this.loading = false;
+        this.list = response.data.cassettes;
+        this.artistes = response.data.artistes;
+    }.bind(this), function() {
+        console.log('fail');
+    }.bind(this));
 
-    this.serverResponse = '';
-
-    this.serverConnect = function() {
-        $http({
-            method: 'GET',
-            url: config.api + 'cassette'
-        }).then(function(response) {
-            console.log('success');
-            this.serverResponse = response;
-        }.bind(this), function(response) {
-            console.log('fail');
-            this.serverResponse = response;
-        }.bind(this));
-    };
   }]);
