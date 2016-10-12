@@ -2,15 +2,17 @@
   <div ng-show="releases.loading" class="loading">
     <img src="images/gear.svg" alt="spinner">
   </div>
-  <div ng-repeat="cassette in releases.list">
-    <span>{{cassette.code}} //</span>
-    <span ng-repeat="artiste in releases.artistes" ng-show="{{cassette.id_cassette === artiste.id_cassette}}">
-      {{artiste.nom}}
-    </span>
-    <span>// {{cassette.titre}}</span>
-    <br/>
-    <img ng-src="images/cassette/{{cassette.image_pochette_resize}}" alt="pochette_cassette"/>
+  <div masonry="{transitionDuration: '0.6s'}" preserve-order>
+    <div ng-repeat="cassette in releases.list" class="masonry-brick">
+      <!--<span>{{cassette.code}} //</span>
+      <span ng-repeat="artiste in releases.artistes" ng-show="{{cassette.id_cassette === artiste.id_cassette}}">
+        {{artiste.nom}}
+      </span>
+      <span>// {{cassette.titre}}</span>
+      <br/>-->
+      <img ng-src="images/cassette/{{cassette.image_pochette_resize}}" alt="pochette_cassette" class="imgPreview"/>
+    </div>
+    {{releases.failInfos}}
   </div>
-  {{releases.failInfos}}
 </div>
 
