@@ -9,8 +9,10 @@
  */
 angular.module('tttApp')
   .factory('server', ['$resource', 'config', function($resource, config) {
-      return $resource(config.api + ':object/:action/:id',
-              {object: '@object', action: '@action', id:'@id'},
-              {'update': { method:'PUT' }}
-            );
+      return $resource
+                (
+                  config.api + ':object/:action/:id',
+                  {object: '@object', action: '@action', id:'@id'},
+                  {'update': { method:'PUT' }}
+                );
   }]);

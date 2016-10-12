@@ -9,11 +9,6 @@
  */
 angular.module('tttApp')
   .controller('ReleasesCtrl', ['$rootScope', '$location', 'server', function ($rootScope, $location, server) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
     $rootScope.url = $location.path();
 
