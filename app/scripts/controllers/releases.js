@@ -8,7 +8,7 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('ReleasesCtrl', ['$rootScope', '$location', '$http', 'config', function ($rootScope, $location, $http, config) {
+  .controller('ReleasesCtrl', ['$rootScope', '$location', 'server', function ($rootScope, $location, server) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,17 +16,21 @@ angular.module('tttApp')
     ];
 
     $rootScope.url = $location.path();
+
     this.loading = true;
-    $http({
-        method: 'GET',
-        url: config.api + 'cassette'
-    }).then(function(response) {
-        console.log('success');
-        this.loading = false;
-        this.list = response.data.cassettes;
-        this.artistes = response.data.artistes;
-    }.bind(this), function() {
-        console.log('fail');
-    }.bind(this));
+
+    server
+        .get({object: 'cassette'})
+        .$promise
+        .then(function(response) {
+            console.log('server connect success');
+            this.loading = false;
+            this.list = response.cassettes;
+            this.artistes = response.artistes;
+        }.bind(this), function(response) {
+            console.log('server connect fail');
+            this.loading = false;
+            this.failInfos = response.data;
+        }.bind(this));
 
   }]);
