@@ -226,6 +226,21 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/index.html'],
         ignorePath:  /\.\.\//
       },
+      options: {
+        "overrides": {
+          "ev-emitter": {
+            "dependencies": {
+              "jquery-bridget": ">=2.0.0"
+            }
+          },
+          "outlayer": {
+            "main": [
+              "item.js",
+              "outlayer.js"
+            ]
+          }
+        }
+      },
       test: {
         devDependencies: true,
         src: '<%= karma.unit.configFile %>',
