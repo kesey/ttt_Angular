@@ -5,8 +5,11 @@ version 0.15.1.
 
 ## Build & development
 
-Run `grunt build` for building and `grunt serve` for preview.
+Run `bower install` then `grunt build` for building and `grunt serve` for preview.
+
+for a prod preview run `grunt serve:dist`
 
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+

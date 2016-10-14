@@ -1,17 +1,26 @@
+<!--
+* AUTEUR: Fabien Meunier
+* PROJECT: Third_Type_Tapes_2
+* PATH: Third_Type_Tapes_2/app/views
+* NAME: releases.html
+-->
+
 <div>
   <div ng-show="releases.loading" class="loading">
-    <img src="images/gear.svg" alt="spinner">
+    <img src="images/gear.svg" alt="">
   </div>
   <div masonry="{transitionDuration: '0.6s'}" preserve-order>
     <div ng-repeat="cassette in releases.list" class="masonry-brick">
-      <div class="showInfos">
-        <img ng-src="images/cassette/{{cassette.image_pochette_resize}}" alt="pochette_cassette" class="imgPreview"/>
-        <span>{{cassette.code}} //</span>
-        <span ng-repeat="artiste in releases.artistes" ng-show="{{cassette.id_cassette === artiste.id_cassette}}">
-          {{artiste.nom}}
-        </span>
-        <span>// {{cassette.titre}}</span>
-      </div>
+      <a href="" class="showInfos wrapword">
+        <img ng-src="images/cassette/{{cassette.image_pochette_resize}}" alt="image_{{cassette.code}}" class="imgPreview fade"/>
+        <h5>
+          {{cassette.code}}&nbsp;//
+          <strong ng-repeat="artiste in releases.artistes" ng-show="{{cassette.id_cassette === artiste.id_cassette}}">
+            &nbsp;{{artiste.nom}}
+          </strong>
+          &nbsp;//&nbsp;{{cassette.titre}}
+        </h5>
+      </a>
     </div>
     {{releases.failInfos}}
   </div>
