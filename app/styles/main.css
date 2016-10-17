@@ -264,36 +264,30 @@ div.masonry-brick {
   width: 140px;
   height: 140px;
   margin: 1px;
-  z-index: -1;
+  display: inline-block;
   position: absolute;
   top: 0px;
   left: 0px;
+  background-image: url('');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-background-repeat: round;
+  -moz-background-repeat: round;
+  -o-background-repeat: round;
+  background-repeat: round;
+  opacity: 1;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+  -webkit-transition: opacity 0.5s ease-in-out;/* transition pour Chrome et Safari */
+  -moz-transition: opacity 0.5s ease-in-out;/* transition pour Firefox */
+  -o-transition: opacity 0.5s ease-in-out;/* transition pour Opéra */
+  transition: opacity 0.5s ease-in-out; /* on écrit cette ligne à la fin de façon à ce que ce soit elle qui soit prise en compte lorsque l'attribut transition sera pris en compte par tous les navigateurs */
 }
 
-div.masonry-brick:hover .fade{
-  /*opacity: 0;
-  filter: alpha(opacity=0); !* For IE8 and earlier *!*/
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-}
-
-.fade {
-  /*opacity: 1;
-  filter: alpha(opacity=100);*/
-  -webkit-animation: fadeOut 0.5s;
-  animation: fadeOut 0.5s;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-@-webkit-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+.imgPreview:hover {
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 .showInfos {

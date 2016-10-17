@@ -17,7 +17,7 @@ describe('Controller: EventsCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(EventsCtrl.awesomeThings.length).toBe(3);
+  it('name your test', function () {
+    expect(true).toBe(true);
   });
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: scrollTo', function () {
+describe('Directive: imagePrev', function () {
 
   // load the directive's module
   beforeEach(module('tttApp'));

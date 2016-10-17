@@ -227,16 +227,16 @@ module.exports = function (grunt) {
         ignorePath:  /\.\.\//
       },
       options: {
-        "overrides": {
-          "ev-emitter": {
-            "dependencies": {
-              "jquery-bridget": ">=2.0.0"
+        'overrides': {
+          'ev-emitter': {
+            'dependencies': {
+              'jquery-bridget': '>=2.0.0'
             }
           },
-          "outlayer": {
-            "main": [
-              "item.js",
-              "outlayer.js"
+          'outlayer': {
+            'main': [
+              'item.js',
+              'outlayer.js'
             ]
           }
         }
