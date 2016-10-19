@@ -248,6 +248,25 @@ div.newsLetter {
   filter: alpha(opacity=70);
 }
 
+.newsLetter, .socialNetwork {
+  display: inline-block;
+}
+
+.socialNetwork {
+  float: right;
+  margin-right: 42px;
+}
+
+.socialNetwork a {
+  margin: 22px 2px 0 0;
+  font-size: 40px;
+  color: #c6c6c6;
+}
+
+.socialNetwork a:hover {
+  color: #aaa;
+}
+
 /* Spinner */
 .loading {
   text-align: center;
@@ -309,3 +328,4 @@ div.masonry-brick {
   padding: 16px;
   word-wrap: break-word;
 }
+

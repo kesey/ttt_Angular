@@ -20,7 +20,8 @@ angular
     'ngTouch',
     'pascalprecht.translate',
     'wu.masonry',
-    'infinite-scroll'
+    'infinite-scroll',
+    'td.easySocialShare'
   ])
   .config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
     $routeProvider

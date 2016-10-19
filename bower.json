@@ -15,7 +15,8 @@
     "angular-translate": "^2.11.1",
     "angular-translate-storage-local": "^2.11.1",
     "angular-translate-loader-static-files": "^2.11.1",
-    "ngInfiniteScroll": "1.0.0"
+    "ngInfiniteScroll": "1.0.0",
+    "angular-easy-social-share": "*"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
