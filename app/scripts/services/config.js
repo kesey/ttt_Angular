@@ -10,5 +10,5 @@
 angular.module('tttApp')
   .constant('config', {
         'api': 'http://localhost/Third_Type_Tapes_2_server/', // '@@api'
-        'pagination': 10
+        'pagination': 20
     });
