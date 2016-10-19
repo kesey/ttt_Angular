@@ -11,8 +11,8 @@ angular.module('tttApp')
   .factory('server', ['$resource', 'config', function($resource, config) {
       return $resource
                 (
-                  config.api + ':object/:action/:id',
-                  {object: '@object', action: '@action', id:'@id'},
+                  config.api + ':object/:action/:param',
+                  {object: '@object', action: '@action', param:'@param'},
                   {'update': { method:'PUT' }}
                 );
   }]);

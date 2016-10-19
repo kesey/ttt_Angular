@@ -44,6 +44,7 @@ module.exports = function(config) {
       'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
       'bower_components/angular-translate-storage-local/angular-translate-storage-local.js',
       'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

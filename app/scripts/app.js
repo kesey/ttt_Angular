@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'wu.masonry'
+    'wu.masonry',
+    'infinite-scroll'
   ])
   .config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
     $routeProvider
