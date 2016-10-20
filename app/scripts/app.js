@@ -21,7 +21,8 @@ angular
     'pascalprecht.translate',
     'wu.masonry',
     'infinite-scroll',
-    'td.easySocialShare'
+    'td.easySocialShare',
+    'oitozero.ngSweetAlert'
   ])
   .config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
     $routeProvider
