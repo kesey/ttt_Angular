@@ -19,6 +19,10 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 a {
   color: #8c8c8c;
 }
@@ -329,3 +333,39 @@ div.masonry-brick {
   word-wrap: break-word;
 }
 
+/* Links */
+
+.linksContainer{
+  margin-left: 15px;
+}
+
+.links {
+  display: inline-block;
+}
+
+.links.friends {
+  vertical-align: top;
+  margin-right: 20%;
+}
+
+.linksContainer h4 {
+  font-size: 15px;
+}
+
+/* shifting item links on hover */
+.linkName {
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkName:hover{
+  -webkit-transform: translate(3px, 0px);
+  -moz-transform: translate(3px, 0px);
+  -o-transform: translate(3px, 0px);
+  -ms-transform: translate(3px, 0px);
+  transform: translate(3px, 0px);
+  color: #474747;
+}
