@@ -12,7 +12,23 @@ angular.module('tttApp')
       return $resource
                 (
                   config.api + ':object/:action/:param',
-                  {object: '@object', action: '@action', param:'@param'},
-                  {'update': { method:'PUT' }}
+                  {
+                    object: '@object',
+                    action: '@action',
+                    param:'@param'
+                  },
+                  {
+                    'update': {
+                        method:'PUT'
+                    },
+                    'get': {
+                        method:'GET',
+                        cache: true
+                    },
+                    'post': {
+                        method:'POST',
+                        cache: true
+                    }
+                  }
                 );
   }]);
