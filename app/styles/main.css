@@ -92,8 +92,8 @@ a:focus {
   text-align: center;
 }
 
-/* shifting item menu on hover */
-.header .container .nav.navbar-nav a.menu {
+/* shifting item menu and links on hover */
+a.moveRight{
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -101,7 +101,7 @@ a:focus {
   transition: all 0.2s ease-in-out;
 }
 
-.header .container .nav.navbar-nav li:hover a.menu{
+a.moveRight:hover{
   -webkit-transform: translate(3px, 0px);
   -moz-transform: translate(3px, 0px);
   -o-transform: translate(3px, 0px);
@@ -283,9 +283,12 @@ div.masonry-brick {
   height: 140px;
 }
 
-.imgPreview {
+.resizeImgPrev{
   width: 140px;
   height: 140px;
+}
+
+.imgPreview {
   margin: 1px;
   display: inline-block;
   position: absolute;
@@ -314,8 +317,6 @@ div.masonry-brick {
 }
 
 .showInfos {
-  width: 140px;
-  height: 140px;
   position: relative;
   display: inline-block;
   text-align: center;
@@ -368,4 +369,23 @@ div.masonry-brick {
   -ms-transform: translate(3px, 0px);
   transform: translate(3px, 0px);
   color: #474747;
+}
+
+/* Artistes */
+.artistesPrev{
+  border-radius: 15px 50px;
+}
+
+/* Events */
+.resizeImgEvent{
+  width: 140px;
+  height: 140px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-background-repeat: round;
+  -moz-background-repeat: round;
+  -o-background-repeat: round;
+  background-repeat: round;
 }
