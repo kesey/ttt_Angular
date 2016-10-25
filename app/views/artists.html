@@ -10,9 +10,9 @@
         <img src="images/gear.svg" alt="{{ 'LOADING' | translate }}">
     </div>
     <div masonry="{transitionDuration: '0.6s'}" preserve-order>
-        <div ng-repeat="artiste in artists.list" class="masonry-brick">
-            <a href="" class="showInfos wrapword resizeImgPrev artistesPrev">
-                <div image-prev="images/artiste/{{artiste.image_artiste_resize}}" class="imgPreview resizeImgPrev"></div>
+        <div ng-repeat="artiste in artists.list" class="masonry-brick preview">
+            <a href="" class="infosPrev">
+                <div image-prev="images/artiste/{{artiste.image_artiste_resize}}" class="imgPreview autosize"></div>
                 <h5>
                     <strong>{{artiste.nom}}</strong>
                 </h5>

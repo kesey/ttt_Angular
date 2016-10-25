@@ -278,7 +278,7 @@ div.newsLetter {
 }
 
 /* Images preview */
-div.masonry-brick {
+div.square {
   width: 140px;
   height: 140px;
 }
@@ -335,7 +335,6 @@ div.masonry-brick {
 }
 
 /* Links */
-
 .linksContainer{
   margin-left: 15px;
 }
@@ -371,21 +370,16 @@ div.masonry-brick {
   color: #474747;
 }
 
-/* Artistes */
-.artistesPrev{
-  border-radius: 15px 50px;
+/* Events */
+.preview {
+  margin: 1px;
+  text-align: center;
+  padding: 5px;
 }
 
-/* Events */
-.resizeImgEvent{
+.infosPrev .imgPreview {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   width: 140px;
-  height: 140px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  -webkit-background-repeat: round;
-  -moz-background-repeat: round;
-  -o-background-repeat: round;
-  background-repeat: round;
+  height: 100%;
 }
