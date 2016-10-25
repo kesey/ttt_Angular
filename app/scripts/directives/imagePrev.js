@@ -12,7 +12,7 @@ angular.module('tttApp')
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
 
-        function getBackgroundSize(elem) {
+        var getBackgroundSize = function(elem) {
           // This:
           //       * Gets elem computed styles:
           //             - CSS background-size
@@ -101,7 +101,7 @@ angular.module('tttApp')
               width: computedDim[0],
               height: computedDim[1]
           };
-        }
+        };
 
         element.css({
           'background-image' : 'url(' + attrs.imagePrev + ')'
@@ -113,6 +113,7 @@ angular.module('tttApp')
               'width': backGroundImgSize.width,
               'height': backGroundImgSize.height
             });
+            console.log(element.parents('.preview').css('height'));
         }
 
       }

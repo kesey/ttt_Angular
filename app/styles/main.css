@@ -278,12 +278,7 @@ div.newsLetter {
 }
 
 /* Images preview */
-div.square {
-  width: 140px;
-  height: 140px;
-}
-
-.resizeImgPrev{
+.square {
   width: 140px;
   height: 140px;
 }
@@ -372,9 +367,10 @@ div.square {
 
 /* Events */
 .preview {
+  width: 140px;
+  height: 140px;
   margin: 1px;
   text-align: center;
-  padding: 5px;
 }
 
 .infosPrev .imgPreview {
@@ -382,4 +378,9 @@ div.square {
   background-size: 100% auto;
   width: 140px;
   height: 100%;
+}
+
+.eventInfo {
+  font-size: 12px;
+  padding: 2px;
 }
