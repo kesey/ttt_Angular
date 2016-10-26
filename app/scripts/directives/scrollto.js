@@ -9,11 +9,12 @@
 angular.module('tttApp')
   .directive('scrollTo', ['$log', '$timeout', '$window', function($log, $timeout, $window) {
 
+    var currentYPosition, elmYPosition, smoothScroll;
+
     /*
      Retrieve the current vertical position
      @returns Current vertical position
      */
-    var currentYPosition, elmYPosition, smoothScroll;
     currentYPosition = function() {
       if ($window.pageYOffset) {
         return $window.pageYOffset;
