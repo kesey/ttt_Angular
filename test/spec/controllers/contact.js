@@ -6,7 +6,7 @@ describe('Controller: ContactCtrl', function () {
   beforeEach(module('tttApp'));
 
   var ContactCtrl,
-    scope;
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {

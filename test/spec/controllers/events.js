@@ -6,7 +6,7 @@ describe('Controller: EventsCtrl', function () {
   beforeEach(module('tttApp'));
 
   var EventsCtrl,
-    scope;
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {

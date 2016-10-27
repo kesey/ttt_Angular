@@ -32,6 +32,12 @@ angular
         controllerAs: 'releases',
         title: 'releases'
       })
+      .when('/release/:id/:code/:artiste/:titre', {
+        templateUrl: 'views/release.html',
+        controller: 'ReleaseCtrl',
+        controllerAs: 'release',
+        title: 'release'
+      })
       .when('/label', {
         templateUrl: 'views/label.html',
         controller: 'LabelCtrl',
@@ -79,7 +85,7 @@ angular
   .run(['$rootScope', '$route', '$filter', '$translate', function($rootScope, $route, $filter, $translate) {
     function changeTitle() {
         var dynamicTitle = $filter('uppercase')($route.current.title);
-        document.title = 'Third Type Tapes - ' + $translate.instant('MENU_' + dynamicTitle);
+        document.title = 'Third Type Tapes - ' + $translate.instant(dynamicTitle);
     }
 
     $rootScope.$on('$routeChangeSuccess', function() {

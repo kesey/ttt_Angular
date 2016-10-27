@@ -6,7 +6,7 @@ describe('Controller: ReleasesCtrl', function () {
   beforeEach(module('tttApp'));
 
   var ReleasesCtrl,
-    scope;
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
@@ -18,6 +18,6 @@ describe('Controller: ReleasesCtrl', function () {
   }));
 
   it('name your test', function () {
-   expect(true).toBe(true);
+    expect(true).toBe(true);
   });
 });

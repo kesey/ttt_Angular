@@ -6,7 +6,7 @@ describe('Controller: ArtistsCtrl', function () {
   beforeEach(module('tttApp'));
 
   var ArtistsCtrl,
-    scope;
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
