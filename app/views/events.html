@@ -9,7 +9,7 @@
     <div ng-show="events.loading" class="loading">
         <img src="images/gear.svg" alt="{{ 'LOADING' | translate }}">
     </div>
-    <div masonry="{transitionDuration: '0.6s'}" preserve-order>
+    <div masonry="{transitionDuration: '0.6s'}" class="grid" preserve-order>
         <div ng-repeat="event in events.list" class="masonry-brick preview">
             <a href="" class="infosPrev">
                 <div image-prev="images/event/{{event.image_event_resize}}" class="imgPreview autosize"></div>

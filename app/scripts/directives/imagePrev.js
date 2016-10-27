@@ -7,28 +7,36 @@
  * # imageFade
  */
 angular.module('tttApp')
-  .directive('imagePrev',['$window', function ($window) {
+  .directive('imagePrev',['$q', '$window', function ($q, $window) {
+
+    // load the image object with url of background image
+    var loadImage = function(src) {
+        var deferred = $q.defer(),
+            image = new Image();
+
+            image.src = src;
+            image.onload = function() {
+                deferred.resolve(image);
+            };
+
+        return deferred.promise;
+    };
 
     // Calcul the width and height of the
     // background image.
-    var getBackgroundSize = function(elem, src) {
+    var getBackgroundSize = function(elem, image) {
       // This:
       //       * Gets elem computed styles:
       //             - CSS background-size
       //             - element's width and height
       //       * Extracts background URL
       var computedStyle = $window.getComputedStyle(elem),
-          image = new Image(),
           cssSize = computedStyle.backgroundSize,
           elemW = parseInt(computedStyle.width.replace('px', ''), 10),
           elemH = parseInt(computedStyle.height.replace('px', ''), 10),
           elemDim = [elemW, elemH],
           computedDim = [],
           ratio;
-      // Load the image with the extracted URL.
-      // Should be in cache already.
-      image.src = src;
-      console.log(image.height);
       // Determine the 'ratio'
       ratio = image.width > image.height ? image.width / image.height : image.height / image.width;
       // Split background-size properties into array
@@ -100,6 +108,7 @@ angular.module('tttApp')
           width: computedDim[0],
           height: computedDim[1]
       };
+
     };
 
     return {
@@ -107,18 +116,34 @@ angular.module('tttApp')
       compile: function compile() {
         return {
           pre: function preLink(scope, element, attrs) {
+
             element.css({
               'background-image' : 'url(' + attrs.imagePrev + ')'
             });
+
           },
           post: function postLink(scope, element, attrs) {
+
             if(element.hasClass('autosize')) {
-              var backGroundImgSize = getBackgroundSize(element[0],  attrs.imagePrev);
-              element.parents('.preview').css({
-                'width': backGroundImgSize.width,
-                'height': backGroundImgSize.height
-              });
+              var imageLoadOk;
+              imageLoadOk = loadImage(attrs.imagePrev);
+              imageLoadOk
+                  .then(function(image) {
+                    var backGroundImgSize = getBackgroundSize(element[0], image);
+
+                    element
+                        .parents('.preview')
+                        .css({
+                            'width': backGroundImgSize.width,
+                            'height': backGroundImgSize.height
+                        });
+
+                    element
+                        .parents('.grid')
+                        .masonry('layout');
+                  });
             }
+
           }
         };
       }
