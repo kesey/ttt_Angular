@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc service
- * @name tttApp.concatArray
+ * @name tttApp.utility
  * @description
- * # concatArray concatenation du tableau b dans le a
+ * # utility methodes utiles
  * Factory in the tttApp.
  */
 angular.module('tttApp')
-  .factory('concatArray', function () {
+  .factory('utility', function () {
 
     return {
-      concat: function (a, b) {
+      concatArray: function (a, b) { // concatenation du tableau b dans le a
           a = b.reduce( function(coll,item){
               coll.push(item);
               return coll;

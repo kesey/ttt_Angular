@@ -8,7 +8,7 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('EventsCtrl', ['$rootScope', '$location', 'config', 'server', 'concatArray', function ($rootScope, $location, config, server, concatArray) {
+  .controller('EventsCtrl', ['$rootScope', '$location', 'config', 'server', 'utility', function ($rootScope, $location, config, server, utility) {
 
     $rootScope.url = $location.path();
 
@@ -26,7 +26,7 @@ angular.module('tttApp')
           .then(function(response) {
               console.log('server connect success');
               this.loading = false;
-              concatArray.concat(this.list, response.events);
+              utility.concatArray(this.list, response.events);
               var totalEvents = parseInt(response.totalEvents[0].total);
               if (offset < totalEvents) { // désactive infiniteScroll quand toute la liste est affichée
                   this.busy = false;
