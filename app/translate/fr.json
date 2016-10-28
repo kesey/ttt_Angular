@@ -19,5 +19,9 @@
   "NEWSLETTER_TITLE": "Inscription à la newsletter",
   "LOADING": "Chargement...",
   "ALIENS": "Artistes",
-  "FRIENDS": "Amis"
+  "FRIENDS": "Amis",
+  "SELECT_PRICE": "Selectionnez vos Frais d'envoi*",
+  "SHIPPING": "*Frais d'envoi:",
+  "SOLD_OUT": "Rupture de stock!!!",
+  "HELP_US": "Mais tu peux encore aider tes aliens dévoués en cliquant sur le bouton donation:"
 }

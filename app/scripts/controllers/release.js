@@ -12,6 +12,7 @@ angular.module('tttApp')
 
     document.title = config.pageTitle + ' - ' + $routeParams.artiste + ' - ' + $routeParams.titre;
     this.loading = true;
+    this.zoomIn = false;
 
     this.getRelease = function() {
       server
@@ -21,7 +22,11 @@ angular.module('tttApp')
             console.log('server connect success');
             this.loading = false;
             this.infos = response.cassette[0];
-            this.shipInfos = response.shipInfos[0];
+            this.artistes = [];
+            angular.forEach(response.cassette, function(value) {
+                this.push(value.nom);
+            }, this.artistes);
+            this.shipInfos = response.shipInfos;
             this.date = response.date;
             this.prevRelease = response.cassPrev ? response.cassPrev : null;
             this.nextRelease = response.cassNext ? response.cassNext : null;
@@ -33,4 +38,13 @@ angular.module('tttApp')
     };
 
     this.getRelease();
+
+    this.downloadFile = function() {
+        server.post({object: 'cassette', action: 'download'});
+    };
+
+    this.zoom = function() {
+      this.zoomIn = !this.zoomIn;
+    };
+
   }]);

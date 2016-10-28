@@ -5,10 +5,93 @@
 * NAME: release.html
 -->
 
-<h5>{{release.infos.code}}&nbsp;&nbsp;<strong>{{release.infos.nom}}</strong>&nbsp;&nbsp;{{release.infos.titre}}</h5>
-<p>{{release.shipInfos}}</p>
+<h4>{{release.infos.code}}&nbsp;&#45;&nbsp;<strong ng-repeat="artisteName in release.artistes">{{artisteName}}&nbsp;</strong>&#45;&nbsp;{{release.infos.titre}}</h4>
+<img ng-src="images/cassette/{{release.infos.image_pochette}}" alt="image_{{release.infos.titre}}" class="detailImage" ng-class="{'zoom': release.zoomIn}" ng-click="release.zoom()"/>
+<div class="detailDescription" ng-bind-html="release.infos.description"></div>
+<!------------------------------------------------------------------------------bouton paiement paypal----------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div ng-hide="release.infos.sold_out == 1">
+    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="business" value="W5BGTPVHQ5A7S">
+        <input type="hidden" name="lc" value="US">
+        <input type="hidden" name="item_name" value="ajout panier">
+        <input type="hidden" name="item_number" value="{{release.infos.code}} // {{release.infos.nom}} // {{release.infos.titre}}">
+        <input type="hidden" name="button_subtype" value="products">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="add" value="1">
+        <input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHostedGuest">
+        <table>
+            <tr>
+                <td>
+                    <input type="hidden" name="on0" value="Price">{{ 'SELECT_PRICE' | translate }}
+                </td>
+            </tr>
+            <tr>
+                <td height="5px"></td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="os0" class="shippingSel">
+                        <option value="France/Belgique">France/Belgique 6,50&euro;</option>
+                        <option value="Europe">Europe 9,50&euro;</option>
+                        <option value="World">World 10,50&euro;</option>
+                    </select>
+                </td>
+            </tr>
+        </table><br/>
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="option_select0" value="France/Belgique">
+        <input type="hidden" name="option_amount0" value="6.50">
+        <input type="hidden" name="option_select1" value="Europe">
+        <input type="hidden" name="option_amount1" value="9.50">
+        <input type="hidden" name="option_select2" value="World">
+        <input type="hidden" name="option_amount2" value="10.50">
+        <input type="hidden" name="option_index" value="0">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/fr_XC/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+<!------------------------------------------------------------------------------détails frais d'envoi------------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <div class="sellingInfos">
+        <h5>
+            <strong translate>SHIPPING</strong>
+        </h5>
+        <div ng-repeat="shipInfo in release.shipInfos">
+            {{shipInfo.nom_destination}}&colon;&nbsp;{{shipInfo.montant_frais_de_port}}&euro;
+        </div>
+    </div>
+    <br/>
+    <!--<p class="sellingInfos" >
+        <em>For shipping discount,<br/>
+            please send your order by mail : thirdtypetapes@gmail.com
+        </em>
+    </p>-->
+</div>
+<!------------------------------------------------------------------------------release en rupture de stock------------------------------------------------------------------------------------------------------------------------------------------------------>
+<p class="sellingInfos" ng-show="release.infos.sold_out == 1">
+    <strong translate>SOLD_OUT</strong>
+    <br/>
+    <span translate>HELP_US</span>
+</p>
+<!------------------------------------------------------------------------------bouton donation paypal----------------------------------------------------------------------------------------------------------------------------------------------------------->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/fr_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
+<!------------------------------------------------------------------------------bouton de telechargement--------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div ng-show="release.infos.download != null && release.infos.sold_out == 1">
+    <form action="" method="POST" enctype="multipart/form-data" ng-submit="release.downloadFile()">
+        <span aria-hidden="true" class="glyphicon glyphicon-download-alt biggerIcon"></span>
+        <input type="submit" value="free download">
+        <input type="hidden" name="nomFichier" value="{{release.infos.download}}" >
+        <input type="hidden" name="action" value="download" >
+    </form>
+</div>
+
 <p>{{release.date}}</p>
 <p>{{release.prevRelease}}</p>
 <p>{{release.nextRelease}}</p>
 
-{{release.failInfos}}
+<p>{{release.failInfos}}<p>

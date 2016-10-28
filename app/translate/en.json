@@ -19,5 +19,9 @@
   "NEWSLETTER_TITLE": "Subscribe to our mailing list",
   "LOADING": "Loading...",
   "ALIENS": "Aliens",
-  "FRIENDS": "Friends"
+  "FRIENDS": "Friends",
+  "SELECT_PRICE": "Select your shipping*",
+  "SHIPPING": "*Shipping:",
+  "SOLD_OUT": "SOLD OUT!!!",
+  "HELP_US": "But you can help your devoted aliens by clicking on the donation button:"
 }
