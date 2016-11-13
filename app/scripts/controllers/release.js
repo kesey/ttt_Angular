@@ -8,20 +8,22 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('ReleaseCtrl',['$routeParams', 'server', 'config', function ($routeParams, server, config) {
+  .controller('ReleaseCtrl',['$routeParams', 'server', 'config', '$http', function ($routeParams, server, config, $http) {
 
-    document.title = config.pageTitle + ' - ' + $routeParams.artiste + ' - ' + $routeParams.titre;
+    angular.element(window.document)[0].title = config.pageTitle + ' - ' + $routeParams.artiste + ' - ' + $routeParams.titre;
     this.loading = true;
     this.zoomIn = false;
+    var fileName = '';
 
     this.getRelease = function() {
       server
-        .get({object: 'cassette', action: 'view', param: $routeParams.id})
+        .get({model: 'cassette', action: 'view', param: $routeParams.id})
         .$promise
         .then(function(response) {
             console.log('server connect success');
             this.loading = false;
             this.infos = response.cassette[0];
+            fileName = this.infos.download;
             this.artistes = [];
             angular.forEach(response.cassette, function(value) {
                 this.push(value.nom);
@@ -40,7 +42,15 @@ angular.module('tttApp')
     this.getRelease();
 
     this.downloadFile = function() {
-        server.post({object: 'cassette', action: 'download'});
+        //server.post({model: 'cassette', action: 'download'});
+        $http({
+            url: 'http://localhost/Third_Type_Tapes_2_server/',
+            method: 'POST',
+            data: {model: 'cassette', action: 'prout'},
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8'
+            }
+        });
     };
 
     this.zoom = function() {

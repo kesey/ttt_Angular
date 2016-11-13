@@ -21,7 +21,7 @@ angular.module('tttApp')
     this.getList = function() {
       this.busy = true;
       server
-          .get({object: 'link', action: 'index', param: offset + ', ' + pagination})
+          .get({model: 'link', action: 'index', param: offset + ', ' + pagination})
           .$promise
           .then(function(response) {
               console.log('server connect success');

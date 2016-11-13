@@ -11,11 +11,11 @@ angular.module('tttApp')
   .factory('server', ['$resource', 'config', function($resource, config) {
       return $resource
                 (
-                  config.api + ':object/:action/:param',
+                  config.api + ':model/:action/:param',
                   {
-                    object: '@object',
+                    model: '@model',
                     action: '@action',
-                    param:'@param'
+                    param: '@param'
                   },
                   {
                     'update': {
@@ -27,7 +27,14 @@ angular.module('tttApp')
                     },
                     'post': {
                         method:'POST',
-                        cache: true
+                        cache: true,
+                        transformRequest: function(data, headers){
+                            headers = angular.extend({}, headers, {
+                                'Content-Type': 'application/json'
+                            });
+                            return angular.toJson(data); // this will go in the body request
+                        },
+                        url: config.api
                     }
                   }
                 );

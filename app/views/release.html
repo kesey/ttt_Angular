@@ -82,7 +82,7 @@
 </form>
 <!------------------------------------------------------------------------------bouton de telechargement--------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div ng-show="release.infos.download != null && release.infos.sold_out == 1">
-    <form action="" method="POST" enctype="multipart/form-data" ng-submit="release.downloadFile()">
+    <form method="POST" enctype="multipart/form-data" ng-submit="release.downloadFile()">
         <span aria-hidden="true" class="glyphicon glyphicon-download-alt biggerIcon"></span>
         <input type="submit" value="free download">
         <input type="hidden" name="nomFichier" value="{{release.infos.download}}" >
@@ -90,8 +90,8 @@
     </form>
 </div>
 
-<p>{{release.date}}</p>
+<!--<p>{{release.date}}</p>
 <p>{{release.prevRelease}}</p>
-<p>{{release.nextRelease}}</p>
+<p>{{release.nextRelease}}</p>-->
 
-<p>{{release.failInfos}}<p>
+<span>{{release.failInfos}}</span>

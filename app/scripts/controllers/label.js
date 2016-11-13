@@ -8,10 +8,8 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('LabelCtrl', ['$rootScope', '$location', 'config', function ($rootScope, $location, config) {
+  .controller('LabelCtrl', ['$rootScope', '$location', function ($rootScope, $location) {
 
     $rootScope.url = $location.path();
-
-    this.api = config.api;
 
   }]);

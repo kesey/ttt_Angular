@@ -111,11 +111,12 @@ a.moveRight:hover{
 
 /* fade out active item menu */
 .header #js-navbar-collapse li {
-  -webkit-transition: background 1s linear;
-  -moz-transition: background 1s linear;
-  -ms-transition: background 1s linear;
-  -o-transition: background 1s linear;
-  transition: background 1s linear;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;
+  background-color:  rgba(231, 231, 231, 0);
 }
 
 .header #js-navbar-collapse li.active {
@@ -195,16 +196,6 @@ a.moveRight:hover{
     border-bottom: 0;
   }
 
-}
-
-/* View Animations */
-.view.anim.ng-enter {
-  -webkit-animation: zoomIn 0.6s;
-  -moz-animation: zoomIn 0.6s;
-  -o-animation: zoomIn 0.6s;
-  -ms-animation: zoomIn 0.6s;
-  animation: zoomIn 0.6s;
-  z-index: -1;
 }
 
 /**************************************************************************************************************************************************************************/
