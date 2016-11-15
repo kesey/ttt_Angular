@@ -30,7 +30,7 @@ angular.module('tttApp')
                 var artiste = {};
                 artiste.id = value.id_artiste;
                 artiste.nom = value.nom;
-                artiste.image = value.image_artiste;
+                artiste.image = value.image_artiste_resize;
                 this.push(artiste);
             }, this.artistes);
             this.shipInfos = response.shipInfos;
