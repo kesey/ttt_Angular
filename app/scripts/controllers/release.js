@@ -22,15 +22,23 @@ angular.module('tttApp')
             console.log('server connect success');
             this.loading = false;
             this.infos = response.cassette[0];
-            this.soundcloudUrl = $sce.trustAsResourceUrl(response.cassette[0].lien_soundcloud);
+            //this.soundcloudUrl = $sce.trustAsResourceUrl(response.cassette[0].lien_soundcloud);
+            this.bandcampUrl = $sce.trustAsResourceUrl(response.cassette[0].lien_bandcamp);
+            this.youtubeUrl = $sce.trustAsResourceUrl(response.cassette[0].lien_youtube);
             this.artistes = [];
             angular.forEach(response.cassette, function(value) {
-                this.push(value.nom);
+                var artiste = {};
+                artiste.id = value.id_artiste;
+                artiste.nom = value.nom;
+                artiste.image = value.image_artiste;
+                this.push(artiste);
             }, this.artistes);
             this.shipInfos = response.shipInfos;
-            this.date = response.date;
-            this.prevRelease = response.cassPrev ? response.cassPrev : null;
-            this.nextRelease = response.cassNext ? response.cassNext : null;
+            this.date = new Date(response.cassette[0].date_sortie).getTime();
+            this.dateMin = new Date(response.date.min).getTime();
+            this.dateMax = new Date(response.date.max).getTime();
+            this.previous = response.cassPrev ? response.cassPrev : null;
+            this.next = response.cassNext ? response.cassNext : null;
         }.bind(this), function(response) {
             console.log('server connect fail');
             this.loading = false;

@@ -57,7 +57,7 @@ a:focus {
   height: 50px;
   width: 100%;
   position : fixed;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header .title {
@@ -377,6 +377,7 @@ div.newsLetter {
   transform: scale(2);
   max-width: 35%;
   position: fixed;
+  z-index: 1;
   top: 30%;
   left: 40%;
 }
@@ -429,14 +430,42 @@ div.newsLetter {
   margin-bottom: 15px;
   padding: 5px;
   border-radius: 5px;
-  color: #aaa;
-  border: 2px #aaa solid;
+  color: #fff;
+  background-color: #c6c6c6;
+  border: 2px #c6c6c6 solid;
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
 }
 
 .downloadButton:hover {
-  background-color: #aaa;
+  background-color: #fff;
+  color: #c6c6c6;
+}
+
+/* lecteurs soundcloud, bandcamp, youtube */
+.player {
+  margin-bottom: 10px;
+  max-width: 700px;
+}
+
+/* fleches de navigation */
+.navigation {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.navArrow {
+  font-size: 50px;
+  padding: 5px;
+  border-radius: 5px;
   color: #fff;
+  background-color: #c6c6c6;
+  border: 2px #c6c6c6 solid;
+  margin: 0 20% 0 20%;
+}
+
+.navArrow:hover {
+  color: #c6c6c6;
+  background-color: #fff;
 }
