@@ -8,12 +8,11 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('ReleaseCtrl',['$routeParams', 'server', 'config', '$http', function ($routeParams, server, config, $http) {
+  .controller('ReleaseCtrl',['$routeParams', 'server', 'config', '$sce', function ($routeParams, server, config, $sce) {
 
     angular.element(window.document)[0].title = config.pageTitle + ' - ' + $routeParams.artiste + ' - ' + $routeParams.titre;
     this.loading = true;
     this.zoomIn = false;
-    var fileName = '';
 
     this.getRelease = function() {
       server
@@ -23,7 +22,7 @@ angular.module('tttApp')
             console.log('server connect success');
             this.loading = false;
             this.infos = response.cassette[0];
-            fileName = this.infos.download;
+            this.soundcloudUrl = $sce.trustAsResourceUrl(response.cassette[0].lien_soundcloud);
             this.artistes = [];
             angular.forEach(response.cassette, function(value) {
                 this.push(value.nom);
@@ -41,16 +40,12 @@ angular.module('tttApp')
 
     this.getRelease();
 
-    this.downloadFile = function() {
-        //server.post({model: 'cassette', action: 'download'});
-        $http({
-            url: 'http://localhost/Third_Type_Tapes_2_server/',
-            method: 'POST',
-            data: {model: 'cassette', action: 'prout'},
-            headers: {
-                'Content-Type': 'application/json; charset=UTF-8'
-            }
-        });
+    this.downloadFile = function(fileName) {
+      server.post({
+        model: 'cassette',
+        action: 'download',
+        nomFichier: fileName
+      });
     };
 
     this.zoom = function() {

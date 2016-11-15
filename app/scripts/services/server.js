@@ -27,14 +27,7 @@ angular.module('tttApp')
                     },
                     'post': {
                         method:'POST',
-                        cache: true,
-                        transformRequest: function(data, headers){
-                            headers = angular.extend({}, headers, {
-                                'Content-Type': 'application/json'
-                            });
-                            return angular.toJson(data); // this will go in the body request
-                        },
-                        url: config.api
+                        cache: true
                     }
                   }
                 );
