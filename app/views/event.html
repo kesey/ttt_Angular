@@ -10,10 +10,11 @@
 <img ng-src="images/event/{{event.infos.image_event}}" alt="image_{{event.infos.titre_event}}" class="detailImage easeInOut" ng-class="{'zoom': event.zoomIn}" ng-click="event.zoom()"/>
 <div class="detailDescription" ng-bind-html="event.infos.description_event"></div>
 <!------------------------------------------------------------------------------API google maps------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-<!--{{event.mapSrc}}
-<div ng-if="event.infos.lieu" >
-    <iframe width="280" height="220" frameborder="0" style="border:0" ng-src="{{event.mapSrc}}" ></iframe>
-</div>-->
+<div map-lazy-load="https://maps.google.com/maps/api/js" class="googleMaps">
+    <ng-map center="{{event.infos.lieu}}" zoom="17">
+        <marker position="{{event.infos.lieu}}"/>
+    </ng-map>
+</div>
 <!------------------------------------------------------------------------------navigation (previous/next)------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="navigation">
     <a ng-if="event.date > event.dateMin" class="glyphicon glyphicon-menu-left navArrow easeInOut" aria-hidden="true" href="#/event/{{event.previous.id_event}}/{{event.previous.date_event}}/{{event.previous.titre_event}}"></a>

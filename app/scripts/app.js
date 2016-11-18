@@ -22,7 +22,8 @@ angular
     'wu.masonry',
     'infinite-scroll',
     'td.easySocialShare',
-    'oitozero.ngSweetAlert'
+    'oitozero.ngSweetAlert',
+    'ngMap'
   ])
   .config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
     $routeProvider

@@ -48,6 +48,7 @@ module.exports = function(config) {
       'bower_components/angular-easy-social-share/easy-social-share.js',
       'bower_components/sweetalert/dist/sweetalert.min.js',
       'bower_components/angular-sweetalert/SweetAlert.js',
+      'bower_components/ngmap/build/scripts/ng-map.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

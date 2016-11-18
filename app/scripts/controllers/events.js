@@ -8,7 +8,7 @@
  * Controller of the tttApp
  */
 angular.module('tttApp')
-  .controller('EventsCtrl', ['$rootScope', '$location', 'config', 'server', 'utility', function ($rootScope, $location, config, server, utility) {
+  .controller('EventsCtrl', ['$rootScope', '$location', 'config', 'server', 'utility', 'NgMap', function ($rootScope, $location, config, server, utility, NgMap) {
 
     $rootScope.url = $location.path();
 
@@ -41,5 +41,11 @@ angular.module('tttApp')
     };
 
     this.getList();
+
+      NgMap.getMap().then(function(map) {
+          console.log(map.getCenter());
+          console.log('markers', map.markers);
+          console.log('shapes', map.shapes);
+      });
 
   }]);

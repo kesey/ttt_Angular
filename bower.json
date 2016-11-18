@@ -18,7 +18,8 @@
     "ngInfiniteScroll": "1.0.0",
     "components-font-awesome": "~4.6.3",
     "angular-easy-social-share": "*",
-    "angular-sweetalert": "latest"
+    "angular-sweetalert": "latest",
+    "ngmap": "~1.17.8"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

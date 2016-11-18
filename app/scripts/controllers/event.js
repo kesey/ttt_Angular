@@ -22,7 +22,6 @@ angular.module('tttApp')
                   console.log('server connect success');
                   this.loading = false;
                   this.infos = response.event;
-                  this.mapSrc = 'https://www.google.com/maps/embed/v1/place?q=' + response.event.lieu + '&key=AIzaSyAZMwB9l5YQnbhyXvJbFx4fzKXnxf2HqYM';
                   this.date = new Date(response.event.date_event).getTime();
                   this.dateMin = new Date(response.date.min).getTime();
                   this.dateMax = new Date(response.date.max).getTime();
