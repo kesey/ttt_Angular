@@ -10,9 +10,9 @@
 <img ng-src="images/event/{{event.infos.image_event}}" alt="image_{{event.infos.titre_event}}" class="detailImage easeInOut" ng-class="{'zoom': event.zoomIn}" ng-click="event.zoom()"/>
 <div class="detailDescription" ng-bind-html="event.infos.description_event"></div>
 <!------------------------------------------------------------------------------API google maps------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-<div map-lazy-load="https://maps.google.com/maps/api/js" class="googleMaps">
-    <ng-map center="{{event.infos.lieu}}" zoom="17">
-        <marker position="{{event.infos.lieu}}"/>
+<div ng-if="event.infos.lieu" map-lazy-load="https://maps.google.com/maps/api/js" class="googleMaps">
+    <ng-map center="{{event.lieu}}" zoom="17">
+        <marker position="{{event.lieu}}"/>
     </ng-map>
 </div>
 <!------------------------------------------------------------------------------navigation (previous/next)------------------------------------------------------------------------------------------------------------------------------------------------------->
