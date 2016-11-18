@@ -470,16 +470,6 @@ div.newsLetter {
   background-color: #fff;
 }
 
-/* bottom preview */
-.releaseBottom {
-  width: 137px;
-  height: 137px;
-}
-
-.artistBottom {
-  width: 137px;
-}
-
 /* google maps */
 .googleMaps {
   margin: auto;
