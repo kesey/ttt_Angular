@@ -369,7 +369,7 @@ div.newsLetter {
 /*------------------------------------------------------------------------------Detail------------------------------------------------------------------------------------*/
 
 .detailImage {
-  width: 275px;
+  width: 280px;
   margin: 0 10px 10px 0;
 }
 
@@ -456,7 +456,7 @@ div.newsLetter {
 }
 
 .navArrow {
-  font-size: 50px;
+  font-size: 35px;
   padding: 5px;
   border-radius: 5px;
   color: #fff;
@@ -468,4 +468,14 @@ div.newsLetter {
 .navArrow:hover {
   color: #c6c6c6;
   background-color: #fff;
+}
+
+/* bottom preview */
+.releaseBottom {
+  width: 137px;
+  height: 137px;
+}
+
+.artistBottom {
+  width: 137px;
 }

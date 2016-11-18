@@ -101,7 +101,7 @@
 <!------------------------------------------------------------------------------artiste(s) ayant produit(s) cette release---------------------------------------------------------------------------------------------------------------------------------------->
 <div masonry="{transitionDuration: '0.6s'}" class="grid bottomPrev" preserve-order>
     <div ng-repeat="artiste in release.artistes" class="masonry-brick preview">
-        <a href="" class="infosPrev">
+        <a href="#/artist/{{artiste.id}}/{{artiste.nom}}" class="infosPrev">
             <div image-prev="images/artiste/{{artiste.image}}" class="imgPreview autosize"></div>
             <h5>
                 <strong>{{artiste.nom}}</strong>

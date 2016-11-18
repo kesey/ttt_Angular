@@ -1,0 +1,21 @@
+<!--
+* AUTEUR: Fabien Meunier
+* PROJECT: Third_Type_Tapes_2
+* PATH: Third_Type_Tapes_2/app/views
+* NAME: event.html
+-->
+
+<span>{{event.failInfos}}</span>
+<h4>{{event.infos.date_event_fr}}&nbsp;&#45;&nbsp;<strong>{{event.infos.titre_event}}</strong></h4>
+<img ng-src="images/event/{{event.infos.image_event}}" alt="image_{{event.infos.titre_event}}" class="detailImage easeInOut" ng-class="{'zoom': event.zoomIn}" ng-click="event.zoom()"/>
+<div class="detailDescription" ng-bind-html="event.infos.description_event"></div>
+<!------------------------------------------------------------------------------API google maps------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!--{{event.mapSrc}}
+<div ng-if="event.infos.lieu" >
+    <iframe width="280" height="220" frameborder="0" style="border:0" ng-src="{{event.mapSrc}}" ></iframe>
+</div>-->
+<!------------------------------------------------------------------------------navigation (previous/next)------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="navigation">
+    <a ng-if="event.date > event.dateMin" class="glyphicon glyphicon-menu-left navArrow easeInOut" aria-hidden="true" href="#/event/{{event.previous.id_event}}/{{event.previous.date_event}}/{{event.previous.titre_event}}"></a>
+    <a ng-if="event.date < event.dateMax" class="glyphicon glyphicon-menu-right navArrow easeInOut" aria-hidden="true" href="#/event/{{event.next.id_event}}/{{event.next.date_event}}/{{event.next.titre_event}}"></a>
+</div>

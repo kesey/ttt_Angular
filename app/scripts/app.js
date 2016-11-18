@@ -26,6 +26,12 @@ angular
   ])
   .config(['$routeProvider', '$translateProvider', function ($routeProvider, $translateProvider) {
     $routeProvider
+      .when('/label', {
+        templateUrl: 'views/label.html',
+        controller: 'LabelCtrl',
+        controllerAs: 'label',
+        title: 'label'
+      })
       .when('/releases', {
         templateUrl: 'views/releases.html',
         controller: 'ReleasesCtrl',
@@ -38,23 +44,28 @@ angular
         controllerAs: 'release',
         title: 'release'
       })
-      .when('/label', {
-        templateUrl: 'views/label.html',
-        controller: 'LabelCtrl',
-        controllerAs: 'label',
-        title: 'label'
-      })
       .when('/artists', {
         templateUrl: 'views/artists.html',
         controller: 'ArtistsCtrl',
         controllerAs: 'artists',
         title: 'artists'
       })
+      .when('/artist/:id/:artiste', {
+        templateUrl: 'views/artist.html',
+        controller: 'ArtistCtrl',
+        controllerAs: 'artist',
+        title: 'artist'
+      })
       .when('/events', {
         templateUrl: 'views/events.html',
         controller: 'EventsCtrl',
         controllerAs: 'events',
         title: 'events'
+      })
+      .when('/event/:id/:date/:titre', {
+        templateUrl: 'views/event.html',
+        controller: 'EventCtrl',
+        controllerAs: 'event'
       })
       .when('/links', {
         templateUrl: 'views/links.html',

@@ -1,0 +1,31 @@
+<!--
+* AUTEUR: Fabien Meunier
+* PROJECT: Third_Type_Tapes_2
+* PATH: Third_Type_Tapes_2/app/views
+* NAME: artist.html
+-->
+
+<span>{{artist.failInfos}}</span>
+<h4>{{artist.infos.nom}}</h4>
+<img ng-src="images/artiste/{{artist.infos.image_artiste}}" alt="image_{{artist.infos.nom}}" class="detailImage easeInOut" ng-class="{'zoom': artist.zoomIn}" ng-click="artist.zoom()"/>
+<div class="detailDescription" ng-bind-html="artist.infos.bio"></div>
+<!------------------------------------------------------------------------------release(s) produite(s) par l'artiste--------------------------------------------------------------------------------------------------------------------------------------------->
+<div masonry="{transitionDuration: '0.6s'}" class="grid bottomPrev" preserve-order>
+    <div ng-repeat="cassette in artist.cassettes" class="masonry-brick square">
+        <a href="#/release/{{cassette.id}}/{{cassette.code}}/{{cassette.artiste}}/{{cassette.titre}}" class="showInfos wrapword square">
+            <div image-prev="images/cassette/{{cassette.image}}" class="imgPreview square"></div>
+            <h5>
+                {{cassette.code}}
+                <br/>
+                <strong>{{cassette.artiste}}</strong>
+                <br/>
+                {{cassette.titre}}
+            </h5>
+        </a>
+    </div>
+</div>
+<!------------------------------------------------------------------------------navigation (previous/next)------------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="navigation">
+    <a ng-if="artist.id > artist.idMin" class="glyphicon glyphicon-menu-left navArrow easeInOut" aria-hidden="true" href="#/artist/{{artist.previous.id_artiste}}/{{artist.previous.nom}}"></a>
+    <a ng-if="artist.id < artist.idMax" class="glyphicon glyphicon-menu-right navArrow easeInOut" aria-hidden="true" href="#/artist/{{artist.next.id_artiste}}/{{artist.next.nom}}"></a>
+</div>
